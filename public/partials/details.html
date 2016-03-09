@@ -12,7 +12,7 @@
 		<div class="details">
 			<div class="outer">
 				<a class="button" style="padding: 205px 15px;" ng-repeat="link in movies | filter:{rank: prev}:true" href="#/list/{{link.imdbID}}/{{link.rank}}"><<</a>
-				<div class="inner" style="width: 250px;"><img ng-src="../data/images/{{movie.imdbID}}.jpg"/></div>
+				<div class="inner" style="width: 250px;"><img ng-src="./data/images/{{movie.imdbID}}.jpg"/></div>
 				<div class="inner">
 					<h3>{{movie.title}}</h3>
 					<h4>Rank: {{movie.rank}}</h4>
