@@ -1,0 +1,37 @@
+<header>
+	<div class="text-center">
+		<h1>IMDB Top 250 Movie Directory</h1>
+		<a href="#/list">Search</a>
+		<span style="display: inline-block; width: 100px;"></span>
+		<a href="#/gallery">Gallery</a>
+	</div>
+</header>
+
+<div class="row">
+	<div class="text-center">
+		<button ng-click="genreFilter = ''">All</button>
+		<button ng-click="genreFilter = 'Action'">Action</button>
+		<button ng-click="genreFilter = 'Adventure'">Adventure</button>
+		<button ng-click="genreFilter = 'Crime'">Crime</button>
+		<button ng-click="genreFilter = 'Comedy'">Comedy</button>
+		<button ng-click="genreFilter = 'Drama'">Drama</button>
+		<button ng-click="genreFilter = 'Musical'">Musical</button>
+		<button ng-click="genreFilter = 'Mystery'">Mystery</button>
+		<button ng-click="genreFilter = 'Romance'">Romance</button>
+		<button ng-click="genreFilter = 'Sci-Fi'">Sci-Fi</button>
+		<button ng-click="genreFilter = 'Thriller'">Thriller</button>
+		<button ng-click="genreFilter = 'Western'">Western</button>
+	</div>
+</div>
+
+<div class="row">
+	<div ng-repeat="movie in movies | filter:{genre: genreFilter} | orderBy:'rank'">
+		<div class="large-2 column">
+			<a href= "#/list/{{movie.imdbID}}/{{movie.rank}}">
+				<div class="gallery">
+					<img style="max-height: 250px" ng-src="../data/images/{{movie.imdbID}}.jpg"/>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
